@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inventory.AI는 상자에 보관된 물품을 정리하고 관리하는 데 도움을 줍니다. AI 기반 이미지 인식, QR 코드 생성, 클라우드 동기화를 통해 소지품을 추적하는 것이 그 어느 때보다 쉬워졌습니다.">
+    <title>Inventory.AI - 스마트 재고 관리</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Inventory.AI - 스마트 재고 관리">
+    <meta property="og:description" content="Inventory.AI는 상자에 보관된 물품을 정리하고 관리하는 데 도움을 줍니다. AI 기반 이미지 인식, QR 코드 생성, 클라우드 동기화를 통해 소지품을 추적하는 것이 그 어느 때보다 쉬워졌습니다.">
+    <meta property="og:image" content="app-icon-1024.png">
+    <meta property="og:url" content="https://yourdomain.com/index-ko.html">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Inventory.AI - 스마트 재고 관리">
+    <meta name="twitter:description" content="Inventory.AI는 상자에 보관된 물품을 정리하고 관리하는 데 도움을 줍니다. AI 기반 이미지 인식, QR 코드 생성, 클라우드 동기화를 통해 소지품을 추적하는 것이 그 어느 때보다 쉬워졌습니다.">
+    <meta name="twitter:image" content="app-icon-1024.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f7fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 25px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        .content-card {
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .content-card h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .content-card > p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            color: #764ba2;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .feature p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .screenshots-section {
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .screenshots-section h2 {
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2em;
+            text-align: center;
+        }
+
+        .screenshots-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px 0;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .screenshots-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .screenshots-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .screenshots-container::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 10px;
+        }
+
+        .screenshot {
+            flex: 0 0 auto;
+            height: 500px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .screenshot:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .appstore-section {
+            text-align: center;
+            padding: 60px 40px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .appstore-button {
+            display: inline-block;
+            padding: 18px 50px;
+            background: #000;
+            color: white !important;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.3em;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .appstore-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+
+        .appstore-icon {
+            font-size: 1.5em;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        .links {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .links h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .link-button {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white !important;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            font-weight: 500;
+        }
+
+        .link-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .app-icon {
+                width: 90px;
+                height: 90px;
+                border-radius: 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .content-card {
+                padding: 30px 20px;
+            }
+
+            .appstore-section {
+                padding: 40px 20px;
+            }
+
+            .appstore-button {
+                font-size: 1.1em;
+                padding: 15px 35px;
+            }
+
+            .screenshots-section {
+                padding: 30px 20px;
+            }
+
+            .screenshot {
+                height: 400px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="app-icon-512.png" alt="Inventory.AI Icon" class="app-icon">
+            <h1>📦 Inventory.AI</h1>
+            <p class="tagline">스마트 차고 재고 관리</p>
+        </header>
+
+        <div class="content-card">
+            <h2>물건을 다시는 잃어버리지 마세요</h2>
+            <p>Inventory.AI는 상자에 보관된 물품을 정리하고 관리하는 데 도움을 줍니다. AI 기반 이미지 인식, QR 코드 생성, 클라우드 동기화를 통해 소지품을 추적하는 것이 그 어느 때보다 쉬워졌습니다.</p>
+
+            <h2 style="margin-top: 40px;">주요 기능</h2>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">📸</div>
+                    <h3>사진 인식</h3>
+                    <p>AI 분석이 사진 속 물체, 색상, 재질을 식별합니다</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📦</div>
+                    <h3>상자 정리</h3>
+                    <p>고유 식별자와 QR 코드로 보관 상자를 생성하고 관리하세요</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">☁️</div>
+                    <h3>클라우드 동기화</h3>
+                    <p>모든 기기에서 재고에 액세스할 수 있는 선택적 클라우드 백업</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔍</div>
+                    <h3>스마트 검색</h3>
+                    <p>이름, 상자 또는 설명으로 품목을 빠르게 찾기</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📄</div>
+                    <h3>PDF 내보내기</h3>
+                    <p>상자용 QR 코드가 포함된 인쇄 가능한 보고서 생성</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🌙</div>
+                    <h3>아름다운 디자인</h3>
+                    <p>다크 모드를 지원하는 깔끔하고 현대적인 인터페이스</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="appstore-section">
+            <a href="https://apps.apple.com/kr/app/inventory-ai/id6757914537" class="appstore-button" target="_blank" rel="noopener">
+                <span class="appstore-icon">📱</span>App Store에서 다운로드
+            </a>
+        </div>
+
+
+        <div class="screenshots-section">
+            <h2>앱 스크린샷</h2>
+            <div class="screenshots-container">
+                <img src="ko/screen-01-ko.png" alt="Screenshot" class="screenshot">
+                <img src="ko/screen-02-ko.png" alt="Screenshot" class="screenshot">
+                <img src="ko/screen-03-ko.png" alt="Screenshot" class="screenshot">
+                <img src="ko/screen-05-ko.png" alt="Screenshot" class="screenshot">
+                <img src="ko/screen-06-ko.png" alt="Screenshot" class="screenshot">
+                <img src="ko/screen-07-ko.png" alt="Screenshot" class="screenshot">
+            </div>
+        </div>
+
+        <div class="links">
+            <h2>빠른 링크</h2>
+                <a href="support-ko.html" class="link-button">지원</a>
+                <a href="privacy-ko.html" class="link-button">개인정보 처리방침</a>
+                <a href="terms-ko.html" class="link-button">이용약관</a>
+        </div>
+    </div>
+</body>
+</html>

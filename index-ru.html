@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inventory.AI помогает вам организовывать и управлять предметами, хранящимися в коробках. С распознаванием изображений на основе ИИ, генерацией QR-кодо">
+    <title>Inventory.AI - Умное Управление Инвентарём</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Inventory.AI - Умное Управление Инвентарём">
+    <meta property="og:description" content="Inventory.AI помогает вам организовывать и управлять предметами, хранящимися в коробках. С распознаванием изображений на основе ИИ, генерацией QR-кодо">
+    <meta property="og:image" content="app-icon-1024.png">
+    <meta property="og:url" content="https://yourdomain.com/index-ru.html">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Inventory.AI - Умное Управление Инвентарём">
+    <meta name="twitter:description" content="Inventory.AI помогает вам организовывать и управлять предметами, хранящимися в коробках. С распознаванием изображений на основе ИИ, генерацией QR-кодо">
+    <meta name="twitter:image" content="app-icon-1024.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f7fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 25px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        .content-card {
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .content-card h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .content-card > p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            color: #764ba2;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .feature p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .screenshots-section {
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .screenshots-section h2 {
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2em;
+            text-align: center;
+        }
+
+        .screenshots-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px 0;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .screenshots-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .screenshots-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .screenshots-container::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 10px;
+        }
+
+        .screenshot {
+            flex: 0 0 auto;
+            height: 500px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .screenshot:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .appstore-section {
+            text-align: center;
+            padding: 60px 40px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .appstore-button {
+            display: inline-block;
+            padding: 18px 50px;
+            background: #000;
+            color: white !important;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.3em;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .appstore-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+
+        .appstore-icon {
+            font-size: 1.5em;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        .links {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .links h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .link-button {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white !important;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            font-weight: 500;
+        }
+
+        .link-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .app-icon {
+                width: 90px;
+                height: 90px;
+                border-radius: 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .content-card {
+                padding: 30px 20px;
+            }
+
+            .appstore-section {
+                padding: 40px 20px;
+            }
+
+            .appstore-button {
+                font-size: 1.1em;
+                padding: 15px 35px;
+            }
+
+            .screenshots-section {
+                padding: 30px 20px;
+            }
+
+            .screenshot {
+                height: 400px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="app-icon-512.png" alt="Inventory.AI Icon" class="app-icon">
+            <h1>📦 Inventory.AI</h1>
+            <p class="tagline">Умное Управление Гаражным Инвентарём</p>
+        </header>
+
+        <div class="content-card">
+            <h2>Никогда Не Теряйте Свои Вещи</h2>
+            <p>Inventory.AI помогает вам организовывать и управлять предметами, хранящимися в коробках. С распознаванием изображений на основе ИИ, генерацией QR-кодов и облачной синхронизацией отслеживание ваших вещей стало проще простого.</p>
+
+            <h2 style="margin-top: 40px;">Основные Возможности</h2>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">📸</div>
+                    <h3>Распознавание Фото</h3>
+                    <p>Анализ на основе ИИ определяет объекты, цвета и материалы на ваших фотографиях</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📦</div>
+                    <h3>Организация Коробок</h3>
+                    <p>Создавайте и управляйте коробками с уникальными идентификаторами и QR-кодами</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">☁️</div>
+                    <h3>Облачная Синхронизация</h3>
+                    <p>Дополнительное облачное резервное копирование для доступа к инвентарю с любого устройства</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Умный Поиск</h3>
+                    <p>Быстро находите предметы по имени, коробке или описанию</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📄</div>
+                    <h3>Экспорт в PDF</h3>
+                    <p>Создавайте печатные отчёты с QR-кодами для ваших коробок</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🌙</div>
+                    <h3>Красивый Дизайн</h3>
+                    <p>Чистый, современный интерфейс с поддержкой тёмной темы</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="appstore-section">
+            <a href="https://apps.apple.com/ru/app/inventory-ai/id6757914537" class="appstore-button" target="_blank" rel="noopener">
+                <span class="appstore-icon">📱</span>Загрузить в App Store
+            </a>
+        </div>
+
+
+        <div class="screenshots-section">
+            <h2>Скриншоты Приложения</h2>
+            <div class="screenshots-container">
+                <img src="ru/screen-01-ru.png" alt="Screenshot" class="screenshot">
+                <img src="ru/screen-02-ru.png" alt="Screenshot" class="screenshot">
+                <img src="ru/screen-03-ru.png" alt="Screenshot" class="screenshot">
+                <img src="ru/screen-05-ru.png" alt="Screenshot" class="screenshot">
+                <img src="ru/screen-06-ru.png" alt="Screenshot" class="screenshot">
+                <img src="ru/screen-07-ru.png" alt="Screenshot" class="screenshot">
+            </div>
+        </div>
+
+        <div class="links">
+            <h2>Быстрые Ссылки</h2>
+                <a href="support-ru.html" class="link-button">Поддержка</a>
+                <a href="privacy-ru.html" class="link-button">Политика Конфиденциальности</a>
+                <a href="terms-ru.html" class="link-button">Условия Использования</a>
+        </div>
+    </div>
+</body>
+</html>
